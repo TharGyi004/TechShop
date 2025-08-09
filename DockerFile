@@ -1,4 +1,4 @@
-﻿# 1. Build stage
+﻿﻿# 1. Build stage
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /app
 
@@ -19,4 +19,3 @@ EXPOSE 5000
 ENV ASPNETCORE_URLS=http://+:5000
 
 ENTRYPOINT ["dotnet", "TechShop.dll"]
-
