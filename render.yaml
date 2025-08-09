@@ -1,8 +1,0 @@
-﻿services:
-  - type: web
-    name: techshop-web
-    runtime: dotnet
-    branch: master
-    buildCommand: 'dotnet publish -c Release -o ./out'
-    startCommand: 'dotnet ./out/TechShop.dll'
-    plan: free
