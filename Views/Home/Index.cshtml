@@ -1,0 +1,159 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<head>
+    <link rel="stylesheet" href="~/css/homepage.css" />
+</head>
+
+<!-- Carousel -->
+<div id="homeBanner" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#homeBanner" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+        <button type="button" data-bs-target="#homeBanner" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#homeBanner" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#homeBanner" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#homeBanner" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    </div>
+
+    <div class="carousel-inner">
+        <div class="carousel-item text-center active" data-bs-interval="5000">
+            <img src="~/images/1.jpg" class="img-fluid banner" alt="Slider 1">
+            <div class="carousel-caption text-start">
+                <a href="https://innwa.com.mm/category/smartphone-1" class="btn rounded-pill px-4 py-2 fw-bold text-white" style="background-color: #007bff; border: none;">
+                    Read More
+                </a>
+            </div>
+        </div>
+        <div class="carousel-item text-center" data-bs-interval="5000">
+            <img src="~/images/2.png" class="img-fluid banner" alt="Slider 2">
+            <div class="carousel-caption text-start">
+                <a href="https://innwa.com.mm/category/smartphone-1" class="btn rounded-pill px-4 py-2 fw-bold text-white" style="background-color: #007bff; border: none;">
+                    Read More
+                </a>
+            </div>
+        </div>
+        <div class="carousel-item text-center" data-bs-interval="5000">
+            <img src="~/images/3.jpg" class="img-fluid banner" alt="Slider 3">
+            <div class="carousel-caption text-start">
+                <a href="https://innwa.com.mm/category/smartphone-1" class="btn rounded-pill px-4 py-2 fw-bold text-white" style="background-color: #007bff; border: none;">
+                    Read More
+                </a>
+            </div>
+        </div>
+        <div class="carousel-item text-center" data-bs-interval="5000">
+            <img src="~/images/4.jpg" class="img-fluid banner" alt="Slider 4">
+            <div class="carousel-caption text-start">
+                <a href="https://innwa.com.mm/category/smartphone-1" class="btn rounded-pill px-4 py-2 fw-bold text-white" style="background-color: #007bff; border: none;">
+                    Read More
+                </a>
+            </div>
+        </div>
+        <div class="carousel-item text-center" data-bs-interval="5000">
+            <img src="~/images/5.jpg" class="img-fluid banner" alt="Slider 5">
+            <div class="carousel-caption text-start">
+                <a href="https://innwa.com.mm/category/smartphone-1" class="btn rounded-pill px-4 py-2 fw-bold text-white" style="background-color: #007bff; border: none;">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#homeBanner" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#homeBanner" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!-- Product Table -->
+<div class="item_table_div">
+    <table class="item_table">
+        <tr class="first_item_row">
+            <td>
+                <div class="post-card">
+                    <a asp-controller="Detail" asp-action="Detail" asp-route-id="1">
+                        <img src="~/images/redmagic.png" class="item_pic" />
+                        <p class="item_name">Red Magic 9 Pro</p>
+                    </a>
+                </div>
+            </td>
+            <td>
+                <div class="post-card">
+                    <a asp-controller="Detail" asp-action="Detail" asp-route-id="2">
+                        <img src="~/images/ss1.jpg" class="item_pic" />
+                        <p class="item_name">ROG8</p>
+                    </a>
+                </div>
+            </td>
+            <td>
+                <div class="post-card">
+                    <a asp-controller="Detail" asp-action="Detail" asp-route-id="3">
+                        <img src="~/images/ss9.jpg" class="item_pic" />
+                        <p class="item_name">Huawei Mate 60 Pro</p>
+                    </a>
+                </div>
+            </td>
+            <td>
+                <div class="post-card">
+                    <a asp-controller="Detail" asp-action="Detail" asp-route-id="4">
+                        <img src="~/images/ss2.webp" class="item_pic" />
+                        <p class="item_name">iPhone 15 Pro Max</p>
+                    </a>
+                </div>
+            </td>
+            <td>
+                <div class="post-card">
+                    <a asp-controller="Detail" asp-action="Detail" asp-route-id="5">
+                        <img src="~/images/ss3.jpg" class="item_pic" />
+                        <p class="item_name">Google Pixel 8 Pro</p>
+                    </a>
+                </div>
+            </td>
+        </tr>
+        <tr class="second_item_row">
+            <td>
+                <div class="post-card">
+                    <a asp-controller="Detail" asp-action="Detail" asp-route-id="6">
+                        <img src="~/images/ss4.png" class="item_pic" />
+                        <p class="item_name">OnePlus 11</p>
+                    </a>
+                </div>
+            </td>
+            <td>
+                <div class="post-card">
+                    <a asp-controller="Detail" asp-action="Detail" asp-route-id="7">
+                        <img src="~/images/ss5.webp" class="item_pic" />
+                        <p class="item_name">Xiaomi 13 Pro</p>
+                    </a>
+                </div>
+            </td>
+            <td>
+                <div class="post-card">
+                    <a asp-controller="Detail" asp-action="Detail" asp-route-id="8">
+                        <img src="~/images/ss6.png" class="item_pic" />
+                        <p class="item_name">Sony Xperia 1 V</p>
+                    </a>
+                </div>
+            </td>
+            <td>
+                <div class="post-card">
+                    <a asp-controller="Detail" asp-action="Detail" asp-route-id="9">
+                        <img src="~/images/ss7.png" class="item_pic" />
+                        <p class="item_name">Motorola Edge 40 Pro</p>
+                    </a>
+                </div>
+            </td>
+            <td>
+                <div class="post-card">
+                    <a asp-controller="Detail" asp-action="Detail" asp-route-id="10">
+                        <img src="~/images/ss8.webp" class="item_pic" />
+                        <p class="item_name">Samsung Galaxy Z Fold 5</p>
+                    </a>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,88 @@
+﻿@model TechShop.Models.User
+    
+<head>
+    <link rel="stylesheet" href="~/css/register.css" />
+</head>
+
+<div>
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <ul style="color:red;">
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+    }
+</div>
+<div class="row pt-3 pb-3">
+    <div class="col-lg-4 col-md-6 m-auto">
+        <div class="col">
+            <h5 class="text-center p-2 m-0">
+                Register
+            </h5>
+        </div>
+
+        <form asp-action="Index" method="post">
+            <div class="col p-2">
+                <input asp-for="Username" class="form-control techshop" placeholder="Username*" required type="text">
+            </div>
+
+            <div class="col p-2">
+                <input asp-for="email" type="email" class="form-control techshop" placeholder="Email*"  required>
+            </div>
+
+            <div class="col p-2">
+                <input asp-for="Password" type="password" class="form-control techshop" placeholder="Password*"  required id="password">
+                <input type="checkbox" id="show_password" onclick="showPassword()">
+                <label for="show_password"> &nbsp; Show Password</label>
+            </div>
+
+            <div class="col p-2">
+                <input asp-for="phone" type="text" class="form-control techshop" placeholder="Phone*"  required>
+            </div>
+
+            <div class="col p-2">
+                <input asp-for="divstate" type="text" class="form-control techshop" placeholder="Division/State*"  required>
+            </div>
+
+            <div class="col p-2">
+                <input asp-for="town" type="text" class="form-control techshop" placeholder="Town*"  required>
+            </div>
+
+            <div class="col p-2">
+                <input asp-for="address" type="text" class="form-control techshop" placeholder="Address*"  required>
+            </div>
+
+            <div class="col text-center p-2">
+                <button type="submit" class="btn btn-outline-danger rounded-pill">
+                    <i class="fa-solid fa-circle-right"></i> Register
+                </button>
+            </div>
+        </form>
+
+        <div class="col pt-3 pb-3">
+            <div class="text-center col">
+                <a asp-controller="Login" asp-action="Index" class="btn btn-outline-danger rounded-pill">
+                    <table>
+                        <tr>
+                            <td class="ps-2 pe-2">
+                                <i class="fa-brands fa-google"></i>
+                            </td>
+                            <td class="ps-2 pe-2">
+                                Login
+                            </td>
+                        </tr>
+                    </table>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showPassword() {
+        var passField = document.getElementById("password");
+        passField.type = passField.type === "password" ? "text" : "password";
+    }
+</script>

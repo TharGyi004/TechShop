@@ -1,0 +1,80 @@
+﻿@model Item
+@{
+    ViewData["Title"] = Model.Name;
+}
+<link rel="stylesheet" href="~/css/detail.css" />
+
+<div class="shop-detail-container">
+    <!-- Left: Product Image -->
+    <div class="shop-detail-left">
+        <img src="~/images/@Model.Image" alt="@Model.Name" class="shop-product-image" />
+    </div>
+
+    <!-- Right: Product Info -->
+    <div class="shop-detail-right">
+        <h1>@Model.Name</h1>
+        <p class="shop-price">$@Model.Price</p>
+        <p class="shop-short-desc">@Model.ShortDescription</p>
+
+        <div class="shop-buttons">
+            <button class="btn-buy">Buy Now</button>
+            <button class="btn-cart">Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+<!-- Tabs -->
+<div class="shop-tabs">
+    <button class="tab-btn active" onclick="openTab(event, 'spec')">Specifications</button>
+    <button class="tab-btn" onclick="openTab(event, 'reviews')">Customer Reviews</button>
+</div>
+
+<!-- Tab Content -->
+<div id="spec" class="tab-content active">
+    <table class="spec-table">
+        <tbody>
+            <tr><td>Brand</td><td>@Model.Brand</td></tr>
+            <tr><td>Brand</td><td><img src="@Model.Image" alt="Alternate Text" /></td></tr>
+            <tr><td>Model</td><td>@Model.ModelNumber</td></tr>
+            <tr><td>Display</td><td>@Model.Display</td></tr>
+            <tr><td>Processor</td><td>@Model.Processor</td></tr>
+            <tr><td>RAM</td><td>@Model.RAM</td></tr>
+            <tr><td>Storage</td><td>@Model.Storage</td></tr>
+            <tr><td>Rear Camera</td><td>@Model.RearCamera</td></tr>
+            <tr><td>Front Camera</td><td>@Model.FrontCamera</td></tr>
+            <tr><td>Battery</td><td>@Model.Battery</td></tr>
+            <tr><td>OS</td><td>@Model.OperatingSystem</td></tr>
+            <tr><td>Network</td><td>@Model.Network</td></tr>
+            <tr><td>SIM</td><td>@Model.SIM</td></tr>
+            <tr><td>Color</td><td>@Model.Color</td></tr>
+            <tr><td>Weight</td><td>@Model.Weight</td></tr>
+            <tr><td>Warranty</td><td>@Model.Warranty</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<div id="reviews" class="tab-content">
+    @if (Model.Reviews != null && Model.Reviews.Any())
+    {
+        foreach (var review in Model.Reviews)
+        {
+            <div class="review">
+                <strong>@review.Author</strong> <span class="rating">⭐ @review.Rating/5</span>
+                <p>@review.Comment</p>
+            </div>
+        }
+    }
+    else
+    {
+        <p>No reviews yet.</p>
+    }
+</div>
+
+<script>
+    function openTab(evt, tabId) {
+        document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+        document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+        document.getElementById(tabId).classList.add("active");
+        evt.currentTarget.classList.add("active");
+    }
+</script>
