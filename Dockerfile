@@ -1,5 +1,5 @@
-# 1. Build stage
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+# 1. Build stage using .NET 8.0 preview SDK
+FROM mcr.microsoft.com/dotnet/sdk:8.0-preview AS build
 WORKDIR /app
 
 # Copy csproj and restore as distinct layers
@@ -10,8 +10,8 @@ RUN dotnet restore
 COPY . ./
 RUN dotnet publish -c Release -o out
 
-# 2. Runtime stage
-FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS runtime
+# 2. Runtime stage using .NET 8.0 preview runtime
+FROM mcr.microsoft.com/dotnet/aspnet:8.0-preview AS runtime
 WORKDIR /app
 COPY --from=build /app/out ./
 
