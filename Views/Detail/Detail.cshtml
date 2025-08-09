@@ -2,7 +2,8 @@
 @{
     ViewData["Title"] = Model.Name;
 }
-<link rel="stylesheet" href="~/css/detail.css" asp-append-version="true" />
+<img src="@Url.Content("~/images/" + Model.Image)" alt="@Model.Name" class="shop-product-image" />
+
 
 
 
