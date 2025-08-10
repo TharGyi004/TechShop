@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -63,15 +63,38 @@
             @RenderBody()
         </main>
     </div> *@
-    <div class="">
-        <main>
-            @RenderBody()
-        </main>
-    </div>
+    <main class="1">
+        @RenderBody()
+    </main>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top text-muted bg-light py-4">
         <div class="container">
-            &copy; 2025 - TechShop - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="row">
+                <!-- Contact Info -->
+                <div class="col-md-6">
+                    <h5 class="mb-3">Contact Us</h5>
+                    <p class="mb-1">
+                        <strong>Address:</strong> No. 123, Main Road, Yangon, Myanmar
+                    </p>
+                    <p class="mb-1">
+                        <strong>Phone:</strong> <a href="tel:+959123456789">+95 9 123 456 789</a>
+                    </p>
+                    <p class="mb-1">
+                        <strong>Email:</strong> <a href="mailto:info@techshop.com">info@techshop.com</a>
+                    </p>
+                </div>
+
+                <!-- Viber QR Code -->
+                <div class="col-md-6 text-md-end text-center">
+                    <h5 class="mb-3">Chat with us on Viber</h5>
+                    <img src="~/images/V1.jpg" alt="Viber QR Code" style="max-width:150px; border: 1px solid #ddd; border-radius: 8px;" />
+                </div>
+            </div>
+
+            <hr />
+            <div class="text-center small">
+                &copy; 2025 - TechShop Mobile - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -96,3 +119,6 @@
         }
     });
 </script>
+
+    
+
